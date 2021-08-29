@@ -18,7 +18,7 @@ export const ProductModalWrapperStyled = styled.div`
     width: 80%;
     background: ${props => props.theme.white};
     text-align: left;
-    padding: 20px;
+    padding: 40px;
     position: relative;
     .close {
       position: absolute;
@@ -46,7 +46,7 @@ export const ProductModalWrapperStyled = styled.div`
         flex: 1 0 75%;
         align-self: auto;
         max-width: calc(75% -  1em);
-        padding-left: 10px;
+        margin-left: 30px;
         > div {
           margin: 7px 0;
         }
@@ -57,6 +57,12 @@ export const ProductModalWrapperStyled = styled.div`
         }
         .dsc {
           text-align: justify;
+        }
+        .share {
+          margin: 15px 0;
+          > * {
+            margin: 0 5px;
+          }
         }
       }
     }

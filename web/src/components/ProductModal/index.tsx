@@ -1,3 +1,9 @@
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton
+} from 'react-share';
 import { Product } from 'types';
 import { ProductModalWrapperStyled } from './styles';
 import PriceDetail from 'components/PriceDetail';
@@ -9,7 +15,7 @@ type Props = {
 
 export default function ProductModal({ selectedProduct, onSelectProduct }: Props) {
   if (!selectedProduct) return (<></>);
-  const { title, description, image_link, price, shipping, availability, brand, condition } = selectedProduct;
+  const { title, description, image_link, price, shipping, availability, brand, condition, link } = selectedProduct;
 
   const onClose = (event: any) => {
       if (
@@ -19,7 +25,6 @@ export default function ProductModal({ selectedProduct, onSelectProduct }: Props
         onSelectProduct(null);
   }
 
-  console.log('selectedProduct : ', selectedProduct)
   return (
     <ProductModalWrapperStyled
       className={!!selectedProduct ? 'visible' : ''}
@@ -28,14 +33,28 @@ export default function ProductModal({ selectedProduct, onSelectProduct }: Props
       <div>
         <div className="header">
           <div className="left">
-            <img src={image_link} />
-            <div>{brand}</div>
-            <div>{condition}</div>
-            <div>{availability}</div>
+            <img src={image_link} alt={title} />
           </div>
           <div className="right">
             <div className="title">{title}</div>
+            <div>Brand: {brand}</div>
+            <div>Condition: {condition}</div>
+            <div>Availability: {availability}</div>
             <div className="dsc">{description}</div>
+            <div className="share">
+              <FacebookShareButton url={link}>
+                <img src="/facebook.png" alt="facebook" />
+              </FacebookShareButton>
+              <LinkedinShareButton url={link}>
+                <img src="/linkedin.png" alt="linkedin" />
+              </LinkedinShareButton>
+              <TwitterShareButton url={link}>
+                <img src="/twitter.png" alt="twitter" />
+              </TwitterShareButton>
+              <WhatsappShareButton url={link}>
+                <img src="/whatsapp.png" alt="whatsapp" />
+              </WhatsappShareButton>
+            </div>
             <PriceDetail price={price} shipping={shipping} />
           </div>
         </div>
