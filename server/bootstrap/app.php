@@ -112,4 +112,10 @@ $app->router->group([
     require __DIR__.'/../routes/web.php';
 });
 
+$app->register(Fruitcake\Cors\CorsServiceProvider::class);
+$app->configure('cors');
+$app->middleware([
+    Fruitcake\Cors\HandleCors::class,
+]);
+
 return $app;
