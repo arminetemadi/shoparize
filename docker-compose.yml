@@ -3,12 +3,12 @@ version: '3.5'
 services:
   server:
     ports:
-      - 8000:8000
+      - 8001:8000
     build:
       context: ./server
     volumes:
       - ./server:/var/www/html
-      - ./server/vendor/:/var/www/html/vendor/
+      - /var/www/html/vendor/
     command: php -S server:8000 -t public
     restart: always
   web:
