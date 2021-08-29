@@ -37,6 +37,9 @@ export const SearchStyled = styled.div`
     height: 40px;
     padding: 5px 10px;
     cursor: pointer;
+    @media only screen and (max-width: 768px) {
+      font-size: .8rem;
+    }
   }
   &:hover {
     button {

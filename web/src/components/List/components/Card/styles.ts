@@ -22,9 +22,15 @@ export const CardItem = styled.div`
   box-shadow: 0 0 8px 3px ${props => props.theme.lightShadow};
   height: 510px;
   cursor: pointer;
-  img {
-    margin-top: 10px;
-    max-width: 200px;
+  .image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    img {
+      margin-top: 10px;
+      width: 100%;
+      height: 100%;
+    }
   }
   .title {
     font-weight: bold;

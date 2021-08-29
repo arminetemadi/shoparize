@@ -1,7 +1,3 @@
-type PredictedProp = {
-  [name: string]: any;
-};
-
 type Product = {
   adult: string;
   availability: string;
@@ -22,4 +18,4 @@ type Product = {
   title: string;
 };
 
-export type { PredictedProp, Product };
+export type { Product };

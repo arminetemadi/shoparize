@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PriceDetailStyled = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
   .price {
     font-size: 2rem;
     margin-right: 10px;
